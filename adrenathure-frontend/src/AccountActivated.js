@@ -8,7 +8,7 @@ const BASE_URL  = process.env.REACT_APP_URL
 function AccountActivated() {
   let { validateCode }= useParams()
 
-  const emailValidate = useFetch(`http://${BASE_URL}/users/validate/${validateCode}`)
+  const emailValidate = useFetch(`${BASE_URL}/users/validate/${validateCode}`)
 
   return (
     <div id='activatedPage'>

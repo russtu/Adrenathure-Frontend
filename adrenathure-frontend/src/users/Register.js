@@ -17,7 +17,7 @@ function Register() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const res = await fetch(`http://${BASE_URL}/users`, {
+    const res = await fetch(`${BASE_URL}/users`, {
       method: 'POST',
       body: JSON.stringify({ email, password: pass, firstName, lastName }),
       headers: {

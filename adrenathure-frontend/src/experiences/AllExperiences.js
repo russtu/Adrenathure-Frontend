@@ -9,11 +9,11 @@ const BASE_URL  = process.env.REACT_APP_URL
 function AllExperiences() {
   const setModal = useSetModal()
   const user = useUser()
-  const experiences = useFetch(`http://${BASE_URL}/experiences`)
+  const experiences = useFetch(`${BASE_URL}/experiences`)
 
   const handleClick = async (e) => {
     const expId = e.target.value
-    const res = await fetch(`http://${BASE_URL}/experiences/admin`, {
+    const res = await fetch(`${BASE_URL}/experiences/admin`, {
       method: 'DELETE',
       body: JSON.stringify({ expId }),
       headers: {
@@ -68,7 +68,7 @@ function AllExperiences() {
             <span className='columna'>{experience.placeName}</span>
             <span className='columna'>{experience.price}€</span>
             <span className='columna'>{experience.experienceDescription}</span>
-            <span><img className='photo-edit' src={`http://${BASE_URL}/${experience.experiencePhoto}`} alt="avatar" /></span>
+            <span><img className='photo-edit' src={`${BASE_URL}/${experience.experiencePhoto}`} alt="avatar" /></span>
             <span className='columna'>{'★★★★★☆☆☆☆☆'.substring(5 - experience.avgVote, 10 - experience.avgVote)}</span>
           </div>
           <div className="section-buttons">

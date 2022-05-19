@@ -33,7 +33,7 @@ function CreatePlace() {
           fd.append('coordsLat', coordsLat)
     }
 
-    const res = await fetch(`http://${BASE_URL}/places/admin`, {
+    const res = await fetch(`${BASE_URL}/places/admin`, {
       method: 'POST',
       body: fd,
       headers: {

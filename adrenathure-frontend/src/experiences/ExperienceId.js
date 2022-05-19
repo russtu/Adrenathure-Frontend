@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import useFetch from "../useFetch"
+import useFetch from "../use"
 import Sidebar from "./Sidebar"
 import { Suspense, useEffect, useState } from "react"
 import Loading from "../Loading"
@@ -12,7 +12,7 @@ function ExperienceId() {
   const { id } = useParams()
   const [experienceDate, setExperienceDate] = useState('')
 
-  const experienceId = useFetch(`http://${BASE_URL}/experiences/${id}`)
+  const experienceId = useFetch(`${BASE_URL}/experiences/${id}`)
 
   useEffect(() => {
     setExperienceDate(null)
@@ -24,7 +24,7 @@ function ExperienceId() {
         <Sidebar className="sidebar" />
         <div className="space-experience">
           <div className="space-photo">
-            <img className='photo-experience' src={`http://${BASE_URL}/${experienceId[0].experiencePhoto}`} alt='foto experiencia'></img>
+            <img className='photo-experience' src={`${BASE_URL}/${experienceId[0].experiencePhoto}`} alt='foto experiencia'></img>
           </div>
           <div className="space-content">
             <div className="experience-title">

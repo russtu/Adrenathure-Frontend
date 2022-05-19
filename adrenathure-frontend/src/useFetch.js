@@ -1,4 +1,4 @@
-import useFetchSuspense from 'fetch-suspense'
+import useFetchSuspense from '-suspense'
 import { useUser } from './hooks'
 
 function useFetch(url) {

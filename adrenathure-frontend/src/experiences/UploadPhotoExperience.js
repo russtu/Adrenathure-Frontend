@@ -13,7 +13,7 @@ function UploadPhotoExperience() {
     fd.append('avatar', file)
     fd.append('Authorization', 'Bearer ' + user.token)
 
-    fetch(`http://${BASE_URL}/experiences`, {
+    fetch(`${BASE_URL}/experiences`, {
       method: 'POST',
       body: fd,
       headers: fd

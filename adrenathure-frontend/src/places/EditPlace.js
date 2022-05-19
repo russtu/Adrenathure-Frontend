@@ -12,7 +12,7 @@ const BASE_URL  = process.env.REACT_APP_URL
 function EditPlace() {
   const { id } = useParams()
   const setModal = useSetModal()
-  const places = useFetch(`http://${BASE_URL}/places/${id}`)
+  const places = useFetch(`${BASE_URL}/places/${id}`)
 
   const [placeName, setPlaceName] = useState(places.placeName || '')
   const [placeDescription, setPlaceDescription] = useState(places.placeDescription || '')
@@ -35,7 +35,7 @@ function EditPlace() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const res = await fetch(`http://${BASE_URL}/places/admin/${id}`, {
+    const res = await fetch(`${BASE_URL}/places/admin/${id}`, {
       method: 'PUT',
       body: fd,
       headers: {

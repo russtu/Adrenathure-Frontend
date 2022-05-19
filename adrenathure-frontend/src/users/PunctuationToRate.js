@@ -15,7 +15,7 @@ function PunctuationToRate() {
     setRating(rate)
     const date = new Date()
 
-    const res = await fetch(`http://${BASE_URL}/reviews/${id}`, {
+    const res = await fetch(`${BASE_URL}/reviews/${id}`, {
       method: 'POST',
       body: JSON.stringify({ rate, date }),
       headers: {

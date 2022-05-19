@@ -7,7 +7,7 @@ import './AllBookings.css'
 const BASE_URL  = process.env.REACT_APP_URL
 
 function Bookings() {
-  const bookings = useFetch(`http://${BASE_URL}/bookings`)
+  const bookings = useFetch(`${BASE_URL}/bookings`)
   return bookings && (
     <div id='bookingsProfiledata'>
         {bookings.length ?

@@ -11,7 +11,7 @@ const BASE_URL = process.env.REACT_APP_URL
 
 function PersonalDataEdit() {
   const setModal = useSetModal()
-  const personalData = useFetch(`http://${BASE_URL}/users/profile`)
+  const personalData = useFetch(`${BASE_URL}/users/profile`)
   const [firstName, setFirstName] = useState(personalData.firstName || '')
   const [lastName, setLastName] = useState(personalData.lastName || '')
   const [email, setEmail] = useState(personalData.email || '')
@@ -24,7 +24,7 @@ function PersonalDataEdit() {
   const handleSubmit = async e => {
     e.preventDefault()
 
-    const res = await fetch(`http://${BASE_URL}/users`, {
+    const res = await fetch(`${BASE_URL}/users`, {
       method: 'PUT',
       body: JSON.stringify({ firstName, lastName, email }),
       headers: {
@@ -49,7 +49,7 @@ function PersonalDataEdit() {
   const handleSubmitPass = async e => {
     e.preventDefault()
     if (password === password2) {
-      const res = await fetch(`http://${BASE_URL}/users`, {
+      const res = await fetch(`${BASE_URL}/users`, {
         method: 'PUT',
         body: JSON.stringify({ password }),
         headers: {

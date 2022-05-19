@@ -9,7 +9,7 @@ const BASE_URL  = process.env.REACT_APP_URL
 function SidebarExperiencesPlaceId() {
   const { id } = useParams()
 
-  const experiencesPlaceId = useFetch(`http://${BASE_URL}/experiences/place/${id}`)
+  const experiencesPlaceId = useFetch(`${BASE_URL}/experiences/place/${id}`)
 
   return experiencesPlaceId && (
     <aside className="sidebar-experience-place">

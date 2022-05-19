@@ -8,7 +8,7 @@ const BASE_URL = process.env.REACT_APP_URL
 
 function BookingId() {
   const { id } = useParams()
-  const bookingId = useFetch(`http://${BASE_URL}/bookings/${id}`)
+  const bookingId = useFetch(`${BASE_URL}/bookings/${id}`)
 
   return bookingId && (
     <>
@@ -31,7 +31,7 @@ function BookingId() {
         <div className="booking-photo-section">
           <span>¡Esperamos para tu voto después de vivir la aventura!</span>
           <PunctuationToRate />
-          <img className='experience-photo' src={`http://localhost:3000/${bookingId.experiencePhoto}`} alt="avatar" />
+          <img className='experience-photo' src={`${BASE_URL}/${bookingId.experiencePhoto}`} alt="avatar" />
         </div>
       </div>
     </>

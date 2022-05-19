@@ -10,13 +10,13 @@ const BASE_URL = process.env.REACT_APP_URL
 function AllBookings() {
   const setModal = useSetModal()
   const user = useUser()
-  const bookings = useFetch(`http://${BASE_URL}/bookings/admin/bookings`)
+  const bookings = useFetch(`${BASE_URL}/bookings/admin/bookings`)
 
   const handleClick = async (e) => {
     e.preventDefault()
     const bookingId = e.target.value
 
-    const res = await fetch(`http://${BASE_URL}/bookings/admin`, {
+    const res = await fetch(`${BASE_URL}/bookings/admin`, {
       method: 'DELETE',
       body: JSON.stringify({ bookingId }),
       headers: {

@@ -10,7 +10,7 @@ const BASE_URL  = process.env.REACT_APP_URL
 
 
 function PersonalData() {
-  const personalData = useFetch(`http://${BASE_URL}/users/profile`)
+  const personalData = useFetch(`${BASE_URL}/users/profile`)
   return personalData && (
     <div className="data">
       <div id='datos'>TUS DATOS</div>

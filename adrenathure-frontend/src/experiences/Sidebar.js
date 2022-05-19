@@ -7,7 +7,7 @@ const BASE_URL  = process.env.REACT_APP_URL
 
 
 function Sidebar() {
-  const experiences = useFetch(`http://${BASE_URL}/experiences`)
+  const experiences = useFetch(`${BASE_URL}/experiences`)
 
   const handleClick = () => {
     setTimeout(() => {

@@ -16,7 +16,7 @@ function UploadAvatar() {
     fd.append('avatar', file)
     fd.append('Authorization', 'Bearer ' + user.token)
 
-    const res = fetch(`http://${BASE_URL}/users/uploads`, {
+    const res = fetch(`${BASE_URL}/users/uploads`, {
       method: 'POST',
       body: fd,
       headers: fd

@@ -7,7 +7,7 @@ const BASE_URL  = process.env.REACT_APP_URL
 
 function YourBooking() {
   const { id } = useParams()
-  const booking = useFetch(`http://${BASE_URL}/bookings/${id}`)
+  const booking = useFetch(`${BASE_URL}/bookings/${id}`)
 
   return booking && (
     <div id='yourBooking'>
@@ -28,7 +28,7 @@ function YourBooking() {
         </div>
         <div className="booking-photo-section">
           <h2>¡Gracias por confiar en nosotros!</h2>
-          <img className='experience-photo' src={`http://localhost:3000/${booking.experiencePhoto}`} alt="avatar" />
+          <img className='experience-photo' src={`${BASE_URL}/${booking.experiencePhoto}`} alt="avatar" />
         </div>
       </div>
       <div className="button-space">

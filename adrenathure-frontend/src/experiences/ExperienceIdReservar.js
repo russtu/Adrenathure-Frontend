@@ -10,7 +10,7 @@ function ExperienceIdReservar() {
   const navigate = useNavigate()
   const setModal = useSetModal()
   const { id, date } = useParams()
-  const experiences = useFetch(`http://${BASE_URL}/experiences/${id}/${date}`)
+  const experiences = useFetch(`${BASE_URL}/experiences/${id}/${date}`)
 
   const [experiencePhoto ] = useState(experiences[0].experiencePhoto)
   const [experienceName, setExperienceName] = useState(experiences[0].experienceName)
@@ -29,7 +29,7 @@ function ExperienceIdReservar() {
     let totalPrice = price * reservedSeats
     let availableSeats = experiences[0].availableSeats - reservedSeats
     e.preventDefault()
-    const res = await fetch(`http://${BASE_URL}/bookings/${id}` , {
+    const res = await fetch(`${BASE_URL}/bookings/${id}` , {
       method: 'POST',
       body: JSON.stringify({ experiencePhoto, experienceName, place_id, experienceDate, experienceHour, availableSeats, reservedSeats, price, totalPrice }),
       headers: {

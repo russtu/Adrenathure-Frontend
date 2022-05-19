@@ -9,7 +9,7 @@ const BASE_URL = process.env.REACT_APP_URL
 function SearchPage() {
 
   let { search } = useLocation()
-  const experiences2 = useFetch(`http://${BASE_URL}/experiences${search}`)
+  const experiences2 = useFetch(`${BASE_URL}/experiences${search}`)
 
   let experiencesMap = experiences2.map(exp => {
     return [JSON.stringify(exp), exp]

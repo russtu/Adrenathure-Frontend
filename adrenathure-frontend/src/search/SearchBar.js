@@ -23,7 +23,7 @@ function SearchBar() {
   const [valueDateFrom, setValueDateFrom] = useState('')
   const [valueDateTo, setValueDateTo] = useState('')
 
-  const placesData = useFetch(`http://${BASE_URL}/places`)
+  const placesData = useFetch(`${BASE_URL}/places`)
 
   const showDefault = () => {
     setValuePlace('')

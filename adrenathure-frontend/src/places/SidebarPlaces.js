@@ -8,7 +8,7 @@ const BASE_URL  = process.env.REACT_APP_URL
 
 
 function SidebarPlaces() {
-  const places = useFetch(`http://${BASE_URL}/places`)
+  const places = useFetch(`${BASE_URL}/places`)
   
   return places && (
     <div className="experiences">
@@ -17,7 +17,7 @@ function SidebarPlaces() {
         places.map(place =>
           <div key={place.id} className='articleExp'>
             <div className='photoArticle'>
-              <img className='photoExperience' src={`http://${BASE_URL}/${place.photo}`} alt='foto experiencia'></img>
+              <img className='photoExperience' src={`${BASE_URL}/${place.photo}`} alt='foto experiencia'></img>
             </div>
             <div key={place.id} >
               <Link to={`/places/${place.id}#placeId`} className='title-exp'>

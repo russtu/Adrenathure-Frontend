@@ -17,7 +17,7 @@ function Login() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const res = await fetch(`http://${BASE_URL}/users/login`, {
+    const res = await fetch(`${BASE_URL}/users/login`, {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: {

@@ -20,7 +20,7 @@ function CreateExperience() {
 
   const navigate = useNavigate()
   const user = useUser()
-  const places = useFetch(`http://${BASE_URL}/places`)
+  const places = useFetch(`${BASE_URL}/places`)
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -36,7 +36,7 @@ function CreateExperience() {
     fd.append('experienceHour', experienceHour)
     fd.append('totalSeats', totalSeats)
 
-    const res = await fetch(`http://${BASE_URL}/experiences/admin`, {
+    const res = await fetch(`${BASE_URL}/experiences/admin`, {
       method: 'POST',
       body: fd,
       headers: {

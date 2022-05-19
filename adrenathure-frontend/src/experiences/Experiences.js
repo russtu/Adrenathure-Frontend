@@ -7,7 +7,7 @@ const BASE_URL  = process.env.REACT_APP_URL
 
 
 function Experiences() {
-  const experiences = useFetch(`http://${BASE_URL}/experiences`)
+  const experiences = useFetch(`${BASE_URL}/experiences`)
 
   return experiences && (
     <div id='experiences'>
@@ -15,7 +15,7 @@ function Experiences() {
         experiences.map(experience =>
           <div key={experience.id} className='articleExp'>
             <div className='photoArticle'>
-              <img className='photoExperience' src={`http://${BASE_URL}/${experience.experiencePhoto}`} alt='foto experiencia'></img>
+              <img className='photoExperience' src={`${BASE_URL}/${experience.experiencePhoto}`} alt='foto experiencia'></img>
             </div>
             <div key={experience.id} >
               <Link to={`/experiences/${experience.id}#experienceId`} className='title-exp'>
